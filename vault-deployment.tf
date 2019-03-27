@@ -21,7 +21,7 @@ resource "kubernetes_deployment" "vault" {
           app = "vault-pod"
         }
       }
-
+  spec {
     container {
       image = "vault"
       name  = "vault"
@@ -39,3 +39,4 @@ resource "kubernetes_deployment" "vault" {
       }
     }
   }
+}
