@@ -44,4 +44,3 @@ resource "kubernetes_deployment" "vault" {
       }
     }
   }
-}
