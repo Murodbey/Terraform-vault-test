@@ -35,9 +35,9 @@ resource "kubernetes_deployment" "vault" {
               memory = "50Mi"
             }
 
-            env {
-              name  = "VAULT_DEV_ROOT_TOKEN_ID"
-              value = "vault-root-token"
+          env {
+            name  = "VAULT_DEV_ROOT_TOKEN_ID"
+            value = "vault-root-token"
             }
           }
         }
