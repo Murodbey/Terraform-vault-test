@@ -22,10 +22,9 @@ resource "kubernetes_deployment" "vault" {
         }
       }
 
-      spec {
-        container {
-          image = "vault"
-          name  = "vault"
+    container {
+      image = "vault"
+      name  = "vault"
           resources{
             requests{
               cpu    = "250m"
@@ -40,4 +39,3 @@ resource "kubernetes_deployment" "vault" {
       }
     }
   }
-}
