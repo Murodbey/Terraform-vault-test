@@ -29,11 +29,11 @@ resource "kubernetes_deployment" "vault" {
           image = "vault"
           name  = "vault"
 
-          resources {
-            requests {
-              cpu    = "250m"
-              memory = "50Mi"
-            }
+          #resources {
+          #  requests {
+          #    cpu    = "250m"
+          #    memory = "50Mi"
+          #  }
 
           env {
             name  = "VAULT_DEV_ROOT_TOKEN_ID"
