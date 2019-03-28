@@ -25,12 +25,20 @@ resource "kubernetes_deployment" "vault" {
   }
   spec {
     replicas = 1
+
+    selector {
+      match_labels {
+        app = "vault-deployment"
+      }
+    }
+
     template {
       metadata {
         labels {
           app = "vault-deployment"
         }
       }
+
       spec {
         volume {
           name = "vault-pvc"
@@ -72,9 +80,6 @@ resource "kubernetes_service" "vault_service" {
       name        = "vault"
       port        = 80
       target_port = "8200"
-    }
-    selector {
-      app = "vault-deployment"
     }
     type = "LoadBalancer"
   }
