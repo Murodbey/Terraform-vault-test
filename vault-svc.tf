@@ -9,6 +9,7 @@ resource "kubernetes_service" "vault_service" {
   spec {
     port {
       name        = "vault"
+      protocol    = "TCP"
       port        = 80
       target_port = 8200
     }
