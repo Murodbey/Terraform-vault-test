@@ -8,9 +8,7 @@ Secure, store and tightly control access to tokens, passwords, certificates, enc
 
 2. To start installation follow these steps:
 ```python
-yum install git -y
-yum install wget -y
-yum install unzip -y
+yum install git unzip wget -y
 wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
 unzip terraform_0.11.11_linux_amd64.zip
 sudo mv terraform /bin/
