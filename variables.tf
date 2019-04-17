@@ -1,1 +1,1 @@
-variable "vault_token"   {MyV3ryS3curePasSwD}
+variable "vault_token"   {}
