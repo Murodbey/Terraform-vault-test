@@ -4,7 +4,7 @@ resource "kubernetes_secret" "vault_secret" {
     namespace = "test"
   }
   data {
-    password = "TXlWM3J5UzNjdXJlUGFzU3dE"
+    password = "MyV3ryS3curePasSwD"
   }
   type = "Opaque"
 }

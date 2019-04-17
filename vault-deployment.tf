@@ -54,14 +54,15 @@ resource "kubernetes_deployment" "vault" {
             protocol       = "TCP"
           }
           env {
-            name  = "VAULT_DEV_ROOT_TOKEN_ID"
-            value_from {
-              secret_key_ref {
-                name = "vault-secret"
-                key  = "password"
+            name  = "vault_token"
+            value = "${var.vault_token}"
+          }
+          env_from {
+            secret_key_ref {
+              name = "vault-secret"
+              key  = "password"
               }
             }
-          }
           volume_mount {
             name       = "vault-pvc"
             mount_path = "/var/run/vault"
