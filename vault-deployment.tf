@@ -58,9 +58,9 @@ resource "kubernetes_deployment" "vault" {
             capabilities {
               drop = ["ALL"]
             }
-            privileged = false
-            run_as_non_root = true
-            run_as_user = 10001
+            # privileged = false
+            # run_as_non_root = true
+            # run_as_user = 10001
           }
           env {
             name  = "vault_token"
