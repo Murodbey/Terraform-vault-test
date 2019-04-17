@@ -76,7 +76,7 @@ resource "kubernetes_deployment" "vault" {
 resource "kubernetes_service" "vault_service" {
   metadata {
     name      = "vault-service"
-    namespace = "test"
+    # namespace = "test"
   }
   
   spec {
