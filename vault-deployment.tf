@@ -53,6 +53,15 @@ resource "kubernetes_deployment" "vault" {
             container_port = 8200
             protocol       = "TCP"
           }
+          security_context {
+            allow_privilege_escalation = false
+            capabilities {
+              drop = ["ALL"]
+            }
+            privileged = false
+            run_as_non_root = true
+            run_as_user = 10001
+          }
           env {
             name  = "vault_token"
             value = "${var.vault_token}"
