@@ -57,12 +57,13 @@ resource "kubernetes_deployment" "vault" {
             name  = "vault_token"
             value = "${var.vault_token}"
           }
+          
           env_from {
-            secret_key_ref {
-              name = "vault-secret"
-              key  = "password"
-              }
+            secret_ref {
+              name = "fuchicorp-secret"
+             }
             }
+            
           volume_mount {
             name       = "vault-pvc"
             mount_path = "/var/run/vault"
