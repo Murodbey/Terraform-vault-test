@@ -54,10 +54,8 @@ resource "kubernetes_deployment" "vault" {
             protocol       = "TCP"
           }
           security_context {
-            allow_privilege_escalation = false
-            capabilities {
-              add = ["IPC_LOCK"]
-            }
+            # allow_privilege_escalation = false
+            capabilities =  ["read"] 
             # privileged = false
             # run_as_non_root = true
             # run_as_user = 10001
