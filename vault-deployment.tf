@@ -1,7 +1,7 @@
 resource "kubernetes_persistent_volume_claim" "vault_pvc" {
   metadata {
     name      = "vault-pvc"
-    namespace = "test"
+    # namespace = "test"
     labels {
       app = "vault-deployment"
     }
@@ -18,7 +18,7 @@ resource "kubernetes_persistent_volume_claim" "vault_pvc" {
 resource "kubernetes_deployment" "vault" {
   metadata {
     name      = "vault"
-    namespace = "test"
+    # namespace = "test"
     labels {
       app = "vault-deployment"
     }
