@@ -1,1 +1,1 @@
-vault_token         = "MyV3ryS3curePasSwD"
+vault_token         = "vault-root-token"
