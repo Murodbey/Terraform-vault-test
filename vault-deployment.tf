@@ -56,9 +56,10 @@ resource "kubernetes_deployment" "vault" {
           security_context {
             # allow_privilege_escalation = false
             capabilities {
-              # add = ["ALL"]
-              add = "IPC_LOCK"
-            } 
+              drop = ["ALL"]
+            }
+            privileged = false
+            run_as_non_root = true
          
             # privileged = false
             # run_as_non_root = true
