@@ -65,6 +65,18 @@ resource "kubernetes_deployment" "vault" {
             container_port = 8200
             protocol       = "TCP"
           }
+          security_context {
+            # allow_privilege_escalation = false
+            capabilities {
+              add = ["IPC_LOCK"]
+            }
+            # privileged = true
+            # run_as_non_root = true
+         
+            # privileged = false
+            # run_as_non_root = true
+            # run_as_user = 10001
+          }
           env {
             name  = "VAULT_DEV_ROOT_TOKEN_ID"
             value_from {
