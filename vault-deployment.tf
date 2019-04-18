@@ -56,7 +56,7 @@ resource "kubernetes_deployment" "vault" {
           security_context {
             # allow_privilege_escalation = false
             capabilities {
-              drop = ["ALL"]
+              add = ["ALL"]
             }
             privileged = false
             run_as_non_root = true
