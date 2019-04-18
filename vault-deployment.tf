@@ -58,8 +58,8 @@ resource "kubernetes_deployment" "vault" {
             capabilities {
               add = ["IPC_LOCK"]
             }
-            privileged = false
-            run_as_non_root = true
+            privileged = true
+            # run_as_non_root = true
          
             # privileged = false
             # run_as_non_root = true
