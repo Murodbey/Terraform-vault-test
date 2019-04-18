@@ -49,17 +49,17 @@ resource "kubernetes_deployment" "vault" {
         container {
           name  = "vault"
           image = "vault"
+           port {
+            container_port = 8200
+            protocol       = "TCP"
+          }
           security_context {
             # allow_privilege_escalation = false
             capabilities {
               # add = ["ALL"]
               add = "IPC_LOCK"
             } 
-          port {
-            container_port = 8200
-            protocol       = "TCP"
-          }
-
+         
             # privileged = false
             # run_as_non_root = true
             # run_as_user = 10001
