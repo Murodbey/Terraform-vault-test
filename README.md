@@ -23,7 +23,7 @@ terraform apply
 ```
 3. Once the installation is completed please run these command to check if everything was created or no:
 
-```python
+```
 kubectl get pods -n test
 kubectl get pvc -n test
 kubectl get pv -n test
